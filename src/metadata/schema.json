@@ -1,0 +1,92 @@
+{
+    "package": "Prexview",
+    "tagline": "Prexview API",
+    "description": "PrexView makes it simple to convert your data to different formats.",
+    "image": "https:\/\/logo.clearbit.com\/prexview.com",
+    "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-Prexview-Package",
+    "keywords": [
+        "API",
+        "documents",
+        "templates",
+        "data"
+    ],
+    "accounts": {
+        "domain": "https:\/\/prexview.com",
+        "credentials": [
+            "apiKey"
+        ]
+    },
+    "steps": [
+        "Sign in https://prexview.com/account/",
+        "Click 'Generate new API key'"
+    ]
+    "blocks": [
+        {
+            "name": "createDocument",
+            "description": "This is the most basic and simple way to use the transform service.",
+            "args": [
+                {
+                    "name": "apiKey",
+                    "type": "credentials",
+                    "info": "Your prexview access key",
+                    "required": true
+                },
+                {
+                    "name": "output",
+                    "type": "Select",
+                    "options": [
+                        "html",
+                        "pdf",
+                        "png",
+                        "jpg"
+                    ],
+                    "info": "Type of document that will be created by PrexView service, it must be html, pdf, png or jpg.",
+                    "required": true
+                },
+                {
+                    "name": "template",
+                    "type": "String",
+                    "info": "Template\u2019s name to use for the document creation, you can use dynamic values.",
+                    "required": true
+                },
+                {
+                    "name": "templateBackup",
+                    "type": "String",
+                    "info": "Template\u2019s name to use if the template option doesn\u2019t exist",
+                    "required": false
+                },
+                {
+                    "name": "note",
+                    "type": "String",
+                    "info": "Custom note that can be used to add any information, it\u2019s limit up to 500 chars. This is useful if you want to add metadata such as document, transaction or customer ID. You can use dynamic values.",
+                    "required": false
+                }
+            ],
+            "vendorRequest": {
+                "url": "https:\/\/api.prexview.com\/v1\/transform",
+                "method": "post",
+                "requestParameters": [
+                    {
+                        "type": "form_params",
+                        "parameters": [
+                            "output",
+                            "template",
+                            "templateBackup",
+                            "note"
+                        ]
+                    }
+                ]
+            },
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        }
+    ]
+}
