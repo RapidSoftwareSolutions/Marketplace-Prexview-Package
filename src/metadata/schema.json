@@ -19,7 +19,7 @@
     "steps": [
         "Sign in https://prexview.com/account/",
         "Click 'Generate new API key'"
-    ]
+    ],
     "blocks": [
         {
             "name": "createDocument",
