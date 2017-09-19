@@ -2,7 +2,7 @@
     "package": "Prexview",
     "tagline": "Prexview API",
     "description": "PrexView makes it simple to convert your data to different formats.",
-    "image": "https:\/\/logo.clearbit.com\/prexview.com",
+    "image": "https://avatars3.githubusercontent.com/u/19735043?v=4&s=200",
     "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-Prexview-Package",
     "keywords": [
         "API",
@@ -30,6 +30,15 @@
                     "type": "credentials",
                     "info": "Your prexview access key",
                     "required": true
+                },
+                {
+                    "name": "data",
+                    "type": "JSON",
+                    "info": "Data to transform in JSON format",
+                    "required": true,
+                    "vendorSchema": {
+                        "name":"json"
+                    }
                 },
                 {
                     "name": "output",
@@ -70,6 +79,7 @@
                         "type": "form_params",
                         "parameters": [
                             "output",
+                            "json",
                             "template",
                             "templateBackup",
                             "note"

@@ -29,6 +29,7 @@ This is the most basic and simple way to use the transform service.
 |---------------|------------|----------
 | apiKey        | credentials| Your prexview access key
 | output        | Select     | Type of document that will be created by PrexView service, it must be html, pdf, png or jpg.
+| data        | JSON     | Data to transform in JSON format
 | template      | String     | Template’s name to use for the document creation, you can use dynamic values.
 | templateBackup| String     | Template’s name to use if the template option doesn’t exist
 | note          | String     | Custom note that can be used to add any information, it’s limit up to 500 chars. This is useful if you want to add metadata such as document, transaction or customer ID. You can use dynamic values.
